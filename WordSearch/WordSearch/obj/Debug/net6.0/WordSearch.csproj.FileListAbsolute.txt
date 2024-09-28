@@ -1,0 +1,15 @@
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\bin\Debug\net6.0\WordSearch.exe
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\bin\Debug\net6.0\WordSearch.deps.json
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\bin\Debug\net6.0\WordSearch.runtimeconfig.json
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\bin\Debug\net6.0\WordSearch.dll
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\bin\Debug\net6.0\WordSearch.pdb
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.csproj.AssemblyReference.cache
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.AssemblyInfoInputs.cache
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.AssemblyInfo.cs
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.csproj.CoreCompileInputs.cache
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.dll
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\refint\WordSearch.dll
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.pdb
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\WordSearch.genruntimeconfig.cache
+C:\Users\Usuário\Desktop\Programaçao\C#\WordSearch\WordSearch\WordSearch\obj\Debug\net6.0\ref\WordSearch.dll
