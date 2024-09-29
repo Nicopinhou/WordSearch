@@ -19,6 +19,10 @@ namespace WordSearch.Entities
             Characters = characters.Clone() as char[,];
         }
 
+        public Board(Board board)
+        {
+            Characters = board.Characters.Clone() as char[,];
+        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
