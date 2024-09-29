@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using WordSearch.Entities;
+using WordSearch.Services;
 
 namespace WordSearch
 {
@@ -7,12 +8,7 @@ namespace WordSearch
     {
         static void Main(string[] args)
         {
-            Board a = new Board()
-            {
-                Characters = new char[,] { { 'a', 'a', 'b' },
-                                          { 'b', 'a', 't' }  }
-            };
-            Console.WriteLine(a);
+
         }
     }
 }

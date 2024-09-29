@@ -23,9 +23,17 @@ namespace WordSearch.Entities
         {
             StringBuilder sb = new StringBuilder();
             int i = 0;
+            Console.WriteLine();
+            Console.WriteLine(Characters.GetLength(0));
             foreach (char c in Characters)
             {
-                if (i % Characters.GetLength(1) == 0) sb.Append("\n" + c); else sb.Append(" " + c);
+                if (!(c == '\0'))
+                {
+                    if (i % Characters.GetLength(1) == 0) sb.Append("\n " + c);
+                    else sb.Append(" " + c);
+                }
+                else if (i % Characters.GetLength(1) == 0) sb.Append("\n _");
+                else sb.Append(" _");
                 i++;
             }
             return sb.ToString();
