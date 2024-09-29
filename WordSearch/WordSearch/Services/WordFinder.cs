@@ -18,7 +18,7 @@ namespace WordSearch.Services
                 Console.ForegroundColor = Color;
                 for (int b = 0; b < words.Length; b++)
                 {
-                    if (!(Console.ForegroundColor == ConsoleColor.Yellow) && FindInAllDirection(Characters, words[b], (int)Math.Ceiling((double)(i / Characters.GetLength(1))), i % Characters.GetLength(1) )) Console.ForegroundColor = ConsoleColor.Yellow;
+                    if (!(Console.ForegroundColor == ConsoleColor.Yellow) && FindInAllDirection(Characters, words[b], new OrderedPairs( (int)Math.Ceiling((double)(i / Characters.GetLength(1))), i % Characters.GetLength(1) ))) Console.ForegroundColor = ConsoleColor.Yellow;
                 }
                 if (!(c == '\0'))
                 {
@@ -36,20 +36,20 @@ namespace WordSearch.Services
             WordFind(board.Characters, words);
         }
 
-        static public bool FindInAllDirection(char[,] Characters, string Word, int Y, int X) {
+        static public bool FindInAllDirection(char[,] Characters, string Word, OrderedPairs Pos) {
             for (int i = 0; i < Word.Length; i++) {
-                if (Direction(Characters, Word, -1, -1, Y + i, X + i)) return true;
-                if (Direction(Characters, Word, -1, 0, Y + i, X)) return true;
-                if (Direction(Characters, Word, -1, 1, Y + i, X - i)) return true;
-                if (Direction(Characters, Word, 0, -1, Y, X + i)) return true;
-                if (Direction(Characters, Word, 0, 1, Y, X - i)) return true;
-                if (Direction(Characters, Word, 1, -1, Y - i, X + i)) return true;
-                if (Direction(Characters, Word, 1, 0, Y - i, X)) return true;
-                if (Direction(Characters, Word, 1, 1, Y - i, X - i)) return true;
+                if (Direction(Characters, Word, new OrderedPairs(- 1, -1),new OrderedPairs(Pos.Y + i, Pos.X + i))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(- 1, 0), new OrderedPairs(Pos.Y + i, Pos.X))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(- 1, 1), new OrderedPairs(Pos.Y + i, Pos.X - i))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(0, -1), new OrderedPairs(Pos.Y, Pos.X + i))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(0, 1) , new OrderedPairs(Pos.Y, Pos.X - i))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(1, -1), new OrderedPairs(Pos.Y - i, Pos.X + i))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(1, 0), new OrderedPairs(Pos.Y - i, Pos.X))) return true;
+                if (Direction(Characters, Word, new OrderedPairs(1, 1), new OrderedPairs(Pos.Y - i, Pos.X - i))) return true;
             }
             return false;
         }
-        static public bool Direction(char[,] Characters, string Word, SByte VelY, SByte VelX, int Y, int X)
+        static public bool Direction(char[,] Characters, string Word, OrderedPairs Vel, OrderedPairs Pos)
         {
             bool Find = false;
             try
@@ -57,7 +57,7 @@ namespace WordSearch.Services
                 for (int i = 0; i < Word.Length; i++)
                 {
                     Find = false;
-                    if (!(Characters[Y + VelY * i, X + VelX * i] == Word[i])) break;
+                    if (!(Characters[Pos.Y + Vel.Y * i, Pos.X + Vel.X * i] == Word[i])) break;
                     Find = true;
                 }
             } catch (Exception e)

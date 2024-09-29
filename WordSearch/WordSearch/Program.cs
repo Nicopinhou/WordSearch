@@ -8,7 +8,7 @@ namespace WordSearch
     {
         static void Main(string[] args)
         {
-            WordFinder.WordFind(GenerateBoard.Generate(10, 10, "FOX","GEL"), "FOX", "GEL");
+            WordFinder.WordFind(GenerateBoard.Generate(3, 4, "FOX","GEL","VEL","POS"), "FOX", "GEL", "VEL", "POS");
         }
     }
 }
