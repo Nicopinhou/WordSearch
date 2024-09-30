@@ -27,8 +27,6 @@ namespace WordSearch.Entities
         {
             StringBuilder sb = new StringBuilder();
             int i = 0;
-            Console.WriteLine();
-            Console.WriteLine(Characters.GetLength(0));
             foreach (char c in Characters)
             {
                 if (!(c == '\0'))

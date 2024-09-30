@@ -10,14 +10,13 @@ namespace WordSearch.Services
 {
     internal class GenerateBoard
     {
-        static public Board Generate(int height, int width, params string[] HinddenWords) {
+        static public Board Generate(int height, int width, Random ramdom, params string[] HinddenWords) {
+            
             if (HinddenWords.Any(s => s.Length > height && s.Length > width)) throw new ToLargeWordException("Palavra muinto grande para o tamanho do tabuleiro");
             if (HinddenWords.Sum(s => s.Length) > width * height) throw new ToManyWordsException("Nao cabe todas as palavras no tabuleiro");
 
             HashSet<char> Chars = new HashSet<char>();
             char[,] Characters = new char[height, width];
-            Random ramdom = new Random();
-            
 
             foreach (string word in HinddenWords) { 
                 foreach (char c in word) { 
@@ -30,7 +29,7 @@ namespace WordSearch.Services
                 Vel.Y = (sbyte)ramdom.Next(-1, 2);
                 Pos.X = ramdom.Next(0, width);
                 Pos.Y = ramdom.Next(0, height);
-                for(int count = 0; hasletter && (count <= 500); count++)  {
+                for(int count = 0; hasletter && (count <= 100); count++)  {
                     hasletter = false;
                     Vel.X = (sbyte)ramdom.Next(-1, 2);
                     Vel.Y = (sbyte)ramdom.Next(-1, 2);
@@ -45,9 +44,8 @@ namespace WordSearch.Services
                             hasletter = true;
                         }
                     }
-                    Console.WriteLine(count);
                 }
-                if (hasletter == true) return Generate(height,width,HinddenWords);
+                if (hasletter == true) return Generate(height,width, new Random(ramdom.Next()),HinddenWords);
                 for (int i = 0; i < word.Length; i++)
                 {
 
@@ -63,20 +61,18 @@ namespace WordSearch.Services
                     if ((Characters[Y, X] == '\0')) {
                          bool Word = true;
 
-                        for (int count = 0; Word && (count <= 500); count++)
+                        for (int count = 0; Word && (count <= 100); count++)
                         {
-                            Console.WriteLine(count);
-                            Console.WriteLine(new Board(Characters));
+
                             Word = false;
                             Characters[Y, X] = Chars.ElementAt(ramdom.Next(0, Chars.Count));
-                            Console.WriteLine(Characters[Y, X]);
                             foreach (string strin in HinddenWords)
                             {
                                 if (WordFinder.FindInAllDirection(Characters, strin, new OrderedPairs(Y, X))) Word = true;
                             }
 
                         }
-                            if (Word) return Generate(height, width, HinddenWords);
+                            if (Word) return Generate(height, width, new Random(ramdom.Next()), HinddenWords);
                         
                     }
                 }
